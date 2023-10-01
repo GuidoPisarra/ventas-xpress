@@ -1,0 +1,86 @@
+<ion-app>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+  <ion-menu contentId="main-content" menuId="menu-lateral">
+    <ion-header class="">
+      <ion-toolbar>
+        <ion-title>Menú</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="">
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/index">
+            <ion-icon src="../../../assets/icon/house-solid.svg" slot="start"></ion-icon>
+            Inicio
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/producto">
+            <ion-icon src="../../../assets/icon/plus-solid.svg" slot="start"></ion-icon>
+            Agregar producto
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/lista-productos">
+            <ion-icon src="../../../assets/icon/list-ul-solid.svg" slot="start"></ion-icon>
+            Productos
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf="!usuario">
+          <ion-item routerLink="/ventas">
+            <ion-icon src="../../../assets/icon/hand-holding-dollar-solid.svg" slot="start"></ion-icon>
+            Ventas
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/scanner">
+            <ion-icon src="../../../assets/icon/barcode-solid.svg" slot="start"></ion-icon>
+            Scanner
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf="!usuario">
+          <ion-item routerLink="/egresos">
+            <ion-icon src="../../../assets/icon/arrow-trend-down-solid.svg" slot="start"></ion-icon>
+            Egresos
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf="!usuario">
+          <ion-item routerLink="/control-precios">
+            <ion-icon src="../../../assets/icon/dollar-sign-solid.svg" slot="start"></ion-icon>
+            Precios
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/stock">
+            <ion-icon src="../../../assets/icon/dolly-solid.svg" slot="start"></ion-icon>
+            Stock
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/codigos-qr">
+            <ion-icon src="../../../assets/icon/qrcode-solid.svg" slot="start"></ion-icon>
+            Codigos QR
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf="!usuario">
+          <ion-item routerLink="/balance">
+            <ion-icon src="../../../assets/icon/chart-line-solid.svg" slot="start"></ion-icon>
+            Balance
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle *ngIf="!usuario">
+          <ion-item routerLink="/backup">
+            <ion-icon src="../../../assets/icon/download-solid.svg" slot="start"></ion-icon>
+            Backup
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item (click)="close_session()">
+            <ion-icon src="../../../assets/icon/circle-xmark-regular.svg" slot="start"></ion-icon>
+            Cerrar sesión
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+</ion-app>

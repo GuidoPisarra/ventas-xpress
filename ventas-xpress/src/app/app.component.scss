@@ -1,0 +1,26 @@
+ion-menu::part(backdrop) {
+  background-color: var(--ion-color-primary);
+}
+
+ion-menu::part(container) {
+  border-radius: 0 20px 20px 0;
+  box-shadow: 4px 0px 16px rgba(248, 190, 248, 0.18);
+}
+
+ion-item, ion-item,ion-list{
+  --background: var(--ion-color-primary);
+  color:var(--ion-color-primary-tint);
+}
+
+ion-toolbar{
+  --background:var(--ion-color-primary-shade);
+  color:var(--ion-color-primary-tint);
+}
+
+ion-icon{
+  color: var(--ion-color-primary-tint);
+}
+ion-content{
+  background-color: var(--ion-color-primary);
+}
+

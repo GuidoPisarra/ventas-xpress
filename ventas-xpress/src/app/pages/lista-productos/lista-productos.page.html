@@ -1,0 +1,47 @@
+<app-header titulo="Productos" verBackButton='false' verMenu='true'></app-header>
+
+<ion-content>
+  <div class="contenedorBtnSearch">
+    <ion-searchbar [debounce]="300" (ionChange)="handleChange($event)" placeholder="Buscar"></ion-searchbar>
+    <!--  <ion-button (click)="reload()" style="margin-top: 25px;margin-right: 10px;">
+      <ion-icon src="../../../assets/icon/rotate-solid.svg"></ion-icon>
+      <ion-label style="margin-left: 5px;">
+        Recargar
+      </ion-label>
+    </ion-button> -->
+  </div>
+
+
+  <div class="custom-spinner" *ngIf="cargando">
+    <ion-spinner></ion-spinner>
+    <div class="spinner-text">Cargando...</div>
+  </div>
+  <ion-list [inset]="true" lines="full" class="contenedorItem" *ngIf="!cargando">
+    <ion-item *ngFor="let prod of results, let i = index">
+      <div class="contenedorDetalle">
+        <ion-label>
+          {{prod.description||prod.getDescription() | titlecase}}
+        </ion-label>
+        <ion-label>
+          Talle: {{prod.size}}
+        </ion-label>
+      </div>
+
+
+      <ion-button id="delete" (click)="deleteProduct(prod.id,  prod.description)" *ngIf="!usuario">
+        <ion-icon class="delete" slot="icon-only" src="../../../assets/icon/trash-can-regular.svg"></ion-icon>
+      </ion-button>
+      <ion-button id="edit" (click)="editProduct(prod.id)" *ngIf="!usuario">
+        <ion-icon class="edit" slot="icon-only" src="../../../assets/icon/pen-to-square-regular.svg"></ion-icon>
+      </ion-button>
+
+
+
+    </ion-item>
+  </ion-list>
+
+
+
+
+</ion-content>
+<app-footer></app-footer>

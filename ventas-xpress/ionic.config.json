@@ -1,0 +1,7 @@
+{
+  "name": "VentasXpress",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
